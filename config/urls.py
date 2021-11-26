@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import permissions
 from django.views.generic.base import TemplateView
 from django.conf import settings
@@ -47,6 +47,7 @@ urlpatterns = (
     swagger_url_patterns
     + [
         path("admin/", admin.site.urls),
+        path("api/users/", include("users.urls")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 )

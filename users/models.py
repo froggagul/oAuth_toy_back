@@ -1,5 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
-class User(models.Model):
+# user name and email must be
+class User(AbstractUser):
     pass
+
+
+# lets get some refreshtoken if needs
