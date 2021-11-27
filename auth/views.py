@@ -14,12 +14,6 @@ from users.serializers import UserSerializer
 #         'access': str(refresh.access_token),
 #     }
 
-# # Create your views here.
-# class TestLoginView(APIView):
-
-#     user = User.objects.first()
-#     data = get_tokens_for_user(user)
-
 
 class MeView(APIView):
     queryset = User.objects.all()

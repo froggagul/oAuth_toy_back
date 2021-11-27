@@ -12,7 +12,7 @@ def get_client(username, email, password):
     return client
 
 
-class ModelTestCase(TestCase):
+class AuthTestCase(TestCase):
     def test_me(self):
         email = "froggagul@gmail.com"
         username = "froggagul"
