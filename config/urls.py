@@ -48,6 +48,7 @@ urlpatterns = (
     + [
         path("admin/", admin.site.urls),
         path("api/users/", include("users.urls")),
+        path("api/auth/", include("auth.urls")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 )
