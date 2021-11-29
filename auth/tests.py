@@ -25,3 +25,12 @@ class AuthTestCase(TestCase):
         data = response.data
         assert data["email"] == email
         assert data["username"] == username
+
+    def test_me_exception(self):
+        client = APIClient()  # no authentications
+
+        response = client.get("/api/auth/me/", format="json")
+        assert response.status_code != 200  # get my info must fail
+        assert (
+            response.data["detail"].code == "not_authenticated"
+        )  # error detail includes error detail
